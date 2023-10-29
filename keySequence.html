@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <head>
+    <title>Key Sequence</title>
+  </head>
+  <body>
+    <h2>Type the secret code</h2>
+    <script src="https://www.cornify.com/js/cornify.js"></script>
+    <script>
+      const array = [];
+	  const secret = 'secret';
+	  window.addEventListener('keyup',(e) => {
+        console.log(e.key);
+		array.push(e.key);
+		array.splice(-secret.length-1, array.length - secret.length);
+		if(array.join('').includes(secret)) {
+          cornify_add();
+        }
+	  });
+    </script>
+  </body>
+</html>
